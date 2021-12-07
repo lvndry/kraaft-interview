@@ -21,6 +21,15 @@ const App = () => {
     };
 
     setMessages((oldMessages) => [...oldMessages, newMessage]);
+
+    setTimeout(() => {
+      const conversation = document.querySelector('.conversation');
+
+      if (conversation) {
+        conversation.scrollTop =
+          conversation.scrollHeight - conversation.clientHeight;
+      }
+    });
   }
 
   return (
