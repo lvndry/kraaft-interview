@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import './app.css';
 import Conversation from './components/conversation';
 import { Footer } from './components/footer';
@@ -12,16 +12,21 @@ const App = () => {
   const [messages, setMessages] = useState(storeMessages);
   const { currentUser } = useContext(UserContext);
 
-  function addTextMessage(content: string) {
-    const newMessage: TextMessage = {
-      id: `newMessage-${messages.length}`,
-      senderId: currentUser.id,
-      createdAt: new Date().getTime(),
-      content,
-    };
+  const addTextMessage = useCallback(
+    (content: string) => {
+      const newMessage: TextMessage = {
+        id: `newMessage-${messages.length}`,
+        senderId: currentUser.id,
+        createdAt: new Date().getTime(),
+        content,
+      };
 
-    setMessages((oldMessages) => [...oldMessages, newMessage]);
+      setMessages((oldMessages) => [...oldMessages, newMessage]);
+    },
+    [currentUser.id, messages.length],
+  );
 
+  useEffect(() => {
     setTimeout(() => {
       const conversation = document.querySelector('.conversation');
 
@@ -30,7 +35,7 @@ const App = () => {
           conversation.scrollHeight - conversation.clientHeight;
       }
     });
-  }
+  }, [addTextMessage]);
 
   return (
     <div className="app">
