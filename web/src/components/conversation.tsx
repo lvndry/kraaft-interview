@@ -23,7 +23,7 @@ const Conversation = ({ messages }: ConversationProps) => {
           : users.find((u) => u.id === message.senderId);
         return (
           user && (
-            <MessageWrapper>
+            <MessageWrapper key={message.id}>
               <MessageComponent message={message} sender={user} />
             </MessageWrapper>
           )
