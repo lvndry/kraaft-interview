@@ -161,7 +161,6 @@ const Image = styled.img`
 const Mention = styled.span`
   cursor: pointer;
   color: #ff7675;
-  display: inline-block;
 `;
 
 const BasicText = styled.span``;

@@ -73,5 +73,11 @@ export const store: Store = {
       createdAt: 1618057001918,
       content: `I don't know but it did.  It's the highest scoring game in history.`,
     },
+    {
+      id: '5HMCClTDkb',
+      senderId: 'maxime@kraaft.co',
+      createdAt: 1618057001940,
+      content: `@Maxime @Cedric Boidin! Don't you think it would be a great idea to hire Landry ?`,
+    },
   ],
 };
