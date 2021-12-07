@@ -35,6 +35,7 @@ export const Footer = ({ handleAddTextMessage }: FooterProps) => {
           value={messageContent}
           onChange={handleValueChange}
           onKeyDown={handleKeyDown}
+          aria-label="message"
         />
       </span>
       <span

@@ -13,7 +13,7 @@ interface MessageProps {
 
 const MessageBubble = ({ message, sender, className }: MessageProps) => {
   const { users } = useContext(UserContext);
-  const [splitttedMessage, setSplittedMessage] = useState<string[]>([]);
+  const [splittedMessage, setSplittedMessage] = useState<string[]>([]);
 
   const date = new Date(message.createdAt);
 
@@ -40,8 +40,8 @@ const MessageBubble = ({ message, sender, className }: MessageProps) => {
       <MessageContentWrapper>
         {isTextMessage(message) ? (
           <MessageContent className="message-content">
-            {splitttedMessage.length
-              ? splitttedMessage.map((chunk) => {
+            {splittedMessage.length
+              ? splittedMessage.map((chunk) => {
                   if (chunk.startsWith('@')) {
                     return <Mention key={chunk}>{chunk}</Mention>;
                   }
@@ -53,8 +53,8 @@ const MessageBubble = ({ message, sender, className }: MessageProps) => {
           <ImageMessageWrapper>
             <Image src={message.url} alt={message.url} />
             <MessageContent className="message-content">
-              {splitttedMessage.length
-                ? splitttedMessage.map((chunk) => {
+              {splittedMessage.length
+                ? splittedMessage.map((chunk) => {
                     if (chunk.startsWith('@')) {
                       return <Mention key={chunk}>{chunk}</Mention>;
                     }
