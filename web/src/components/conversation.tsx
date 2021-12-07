@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
 import { Message } from '../models';
-import { ReceivedMessageBubble, SentMessageBubbble } from './messageBubble';
+import { ReceivedMessageBubble, SentMessageBubble } from './messageBubble';
 
 interface ConversationProps {
   messages: Message[];
@@ -16,7 +16,7 @@ const Conversation = ({ messages }: ConversationProps) => {
       {messages.map((message) => {
         const isSentMessage = message.senderId === currentUser.id;
         const MessageComponent = isSentMessage
-          ? SentMessageBubbble
+          ? SentMessageBubble
           : ReceivedMessageBubble;
         const user = isSentMessage
           ? currentUser

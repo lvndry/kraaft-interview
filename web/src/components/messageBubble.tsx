@@ -43,37 +43,12 @@ const UserNameWrapper = styled.div`
   margin-bottom: 8px;
 `;
 
-export const SentMessageBubbble = styled(MessageBubble)`
-  && {
-    align-items: flex-start;
-    .message-content {
-      position: relative;
-      background: blue;
-
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 9px;
-        width: 0;
-        height: 0;
-        border: 21px solid transparent;
-        border-bottom-color: blue;
-        border-top: 0;
-        border-left: 0;
-        margin-left: -10.5px;
-        margin-top: -8px;
-      }
-    }
-  }
-`;
-
-export const ReceivedMessageBubble = styled(MessageBubble)`
+export const SentMessageBubble = styled(MessageBubble)`
   && {
     align-items: flex-end;
     .message-content {
       position: relative;
-      background: green;
+      background: #55efc4;
 
       &:after {
         content: '';
@@ -83,7 +58,7 @@ export const ReceivedMessageBubble = styled(MessageBubble)`
         width: 0;
         height: 0;
         border: 21px solid transparent;
-        border-bottom-color: green;
+        border-bottom-color: #55efc4;
         border-top: 0;
         border-right: 0;
         margin-right: -10.5px;
@@ -93,4 +68,32 @@ export const ReceivedMessageBubble = styled(MessageBubble)`
   }
 `;
 
-const DateWrapper = styled.div``;
+export const ReceivedMessageBubble = styled(MessageBubble)`
+  && {
+    align-items: flex-start;
+    .message-content {
+      position: relative;
+      background: #dfe6e9;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 9px;
+        width: 0;
+        height: 0;
+        border: 21px solid transparent;
+        border-bottom-color: #dfe6e9;
+        border-top: 0;
+        border-left: 0;
+        margin-left: -10.5px;
+        margin-top: -8px;
+      }
+    }
+  }
+`;
+
+const DateWrapper = styled.div`
+  margin-top: 8px;
+  color: #636e72;
+`;
