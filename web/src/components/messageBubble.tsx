@@ -1,18 +1,25 @@
 import styled from '@emotion/styled';
-import { Message } from '../models';
+import { Message, User } from '../models';
 import { isTextMessage } from '../models/message';
 
 interface MessageProps {
+  className?: string;
   message: Message;
+  sender: User;
 }
 
-export const MessageBubble = ({ message }: MessageProps) => {
+export const MessageBubble = ({ message, sender, className }: MessageProps) => {
   return (
-    <MessageContainer>
+    <MessageContainer className={className}>
+      {sender.username}
       {isTextMessage(message) ? (
-        <div>{message.content}</div>
+        <MessageContent className="message-content">
+          {message.content}
+        </MessageContent>
       ) : (
-        <div>{message.url}</div>
+        <MessageContent className="message-content">
+          {message.url}
+        </MessageContent>
       )}
     </MessageContainer>
   );
@@ -20,8 +27,10 @@ export const MessageBubble = ({ message }: MessageProps) => {
 
 const MessageContainer = styled.div`
   max-width: 80%;
+`;
+
+const MessageContent = styled.div`
   padding: 16px;
-  background: green;
   border: 1px transparent solid;
   border-radius: 8px;
 `;
