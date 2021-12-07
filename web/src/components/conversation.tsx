@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useContext } from 'react';
 import { UserContext } from '../context/userContext';
 import { Message } from '../models';
-import { MessageBubble } from './messageBubble';
+import { ReceivedMessageBubble, SentMessageBubbble } from './messageBubble';
 
 interface ConversationProps {
   messages: Message[];
@@ -39,20 +39,4 @@ export default Conversation;
 
 const MessageWrapper = styled.div`
   margin-top: 8px;
-`;
-
-const SentMessageBubbble = styled(MessageBubble)`
-  && {
-    .message-content {
-      background: blue;
-    }
-  }
-`;
-
-const ReceivedMessageBubble = styled(MessageBubble)`
-  && {
-    .message-content {
-      background: green;
-    }
-  }
 `;
