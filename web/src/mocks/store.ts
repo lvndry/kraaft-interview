@@ -1,4 +1,4 @@
-import { User, Message } from './types';
+import { Message, User } from '../models';
 
 interface Store {
   currentUserId: string;

@@ -1,8 +1,3 @@
-export interface User {
-  id: string;
-  username: string;
-}
-
 interface BaseMessage {
   id: string;
   senderId: string;
@@ -11,14 +6,20 @@ interface BaseMessage {
 }
 
 export interface TextMessage extends BaseMessage {
-  type: 'text';
   content: string;
 }
 
 export interface ImageMessage extends BaseMessage {
-  type: 'image';
   url: string;
   caption: string;
 }
 
 export type Message = TextMessage | ImageMessage;
+
+export const isTextMessage = (message: Message): message is TextMessage => {
+  return 'content' in message;
+};
+
+export const isImageMessage = (message: Message): message is ImageMessage => {
+  return 'caption' in message;
+};
