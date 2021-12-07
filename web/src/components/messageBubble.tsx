@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Message, User } from '../models';
 import { isTextMessage } from '../models/message';
+import { formatDate } from '../utils/date';
 
 interface MessageProps {
   className?: string;
@@ -9,6 +10,7 @@ interface MessageProps {
 }
 
 const MessageBubble = ({ message, sender, className }: MessageProps) => {
+  const date = new Date(message.createdAt);
   return (
     <MessageContainer className={className}>
       <UserNameWrapper>{sender.username}</UserNameWrapper>
@@ -21,6 +23,7 @@ const MessageBubble = ({ message, sender, className }: MessageProps) => {
           {message.url}
         </MessageContent>
       )}
+      <DateWrapper>{formatDate(date)}</DateWrapper>
     </MessageContainer>
   );
 };
@@ -89,3 +92,5 @@ export const ReceivedMessageBubble = styled(MessageBubble)`
     }
   }
 `;
+
+const DateWrapper = styled.div``;
