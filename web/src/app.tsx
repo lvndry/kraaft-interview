@@ -1,33 +1,33 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './app.css';
 import Conversation from './components/conversation';
 import { Footer } from './components/footer';
 import { Header } from './components/header';
-import { UserContextProvider } from './context/userContext';
+import { UserContext, UserContextProvider } from './context/userContext';
 import { store } from './mocks/store';
 import { TextMessage } from './models/message';
 
 const App = () => {
   const { messages: storeMessages } = store;
   const [messages, setMessages] = useState(storeMessages);
+  const { currentUser } = useContext(UserContext);
 
   function addTextMessage(content: string) {
     const newMessage: TextMessage = {
       id: `newMessage-${messages.length}`,
-      type: 'text',
-      senderId: store.currentUserId,
+      senderId: currentUser.id,
       createdAt: new Date().getTime(),
       content,
     };
 
-    setMessages((oldMessages) => [newMessage, ...oldMessages]);
+    setMessages((oldMessages) => [...oldMessages, newMessage]);
   }
 
   return (
     <div className="app">
       <UserContextProvider>
         <Header />
-        <Conversation className="conversation" messages={messages} />
+        <Conversation messages={messages} />
         <Footer handleAddTextMessage={addTextMessage} />
       </UserContextProvider>
     </div>

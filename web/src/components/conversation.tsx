@@ -1,17 +1,21 @@
+import styled from '@emotion/styled';
 import { Message } from '../models';
-import { MessageBubble } from './message';
+import { MessageBubble } from './messageBubble';
 
 interface ConversationProps {
-  className?: string;
   messages: Message[];
 }
 
-const Conversation = ({ className, messages }: ConversationProps) => {
+const Conversation = ({ messages }: ConversationProps) => {
   return messages.length > 0 ? (
-    <div>
-      {messages.map((message) => (
-        <MessageBubble message={message} />
-      ))}
+    <div className="conversation">
+      {messages.map((message) => {
+        return (
+          <MessageWrapper>
+            <MessageBubble message={message} />
+          </MessageWrapper>
+        );
+      })}
     </div>
   ) : (
     <div>Aucun messages</div>
@@ -19,3 +23,7 @@ const Conversation = ({ className, messages }: ConversationProps) => {
 };
 
 export default Conversation;
+
+const MessageWrapper = styled.div`
+  margin-top: 8px;
+`;

@@ -1,31 +1,13 @@
-import { Message, User } from '../models';
+import { Message } from '../models';
 
 interface Store {
-  currentUserId: string;
-  users: User[];
   messages: Message[];
 }
 
 export const store: Store = {
-  currentUserId: 'maxime@kraaft.co',
-  users: [
-    {
-      id: 'maxime2@kraaft.co',
-      username: 'Maxime',
-    },
-    {
-      id: 'maxime@kraaft.co',
-      username: 'Maxime Blanchard',
-    },
-    {
-      id: 'cedric@kraaft.co',
-      username: 'Cedric Boidin',
-    },
-  ],
   messages: [
     {
       id: 'JOyCwtqoK',
-      type: 'text',
       senderId: 'maxime@kraaft.co',
       createdAt: 1618056833265,
       content:
@@ -33,7 +15,6 @@ export const store: Store = {
     },
     {
       id: 'yTFQY-vpSu',
-      type: 'text',
       senderId: 'cedric@kraaft.co',
       createdAt: 1618056839996,
       content:
@@ -41,7 +22,6 @@ export const store: Store = {
     },
     {
       id: '6ZzP46ndf4',
-      type: 'image',
       senderId: 'maxime@kraaft.co',
       createdAt: 1618056869148,
       url: 'https://i.imgur.com/s7WucBN.png',
@@ -49,7 +29,6 @@ export const store: Store = {
     },
     {
       id: 'Gee3s5UVi2',
-      type: 'image',
       senderId: 'cedric@kraaft.co',
       createdAt: 1618056882696,
       url: 'https://i.imgur.com/WRgTbTg.png',
@@ -57,14 +36,12 @@ export const store: Store = {
     },
     {
       id: '6Fyn5NwJeA',
-      type: 'text',
       senderId: 'maxime@kraaft.co',
       createdAt: 1618056893845,
       content: `I would hate a cold bench. Then again, I wouldn't want to be some place that cold or watching football.`,
     },
     {
       id: 'sPJVnJGjHX',
-      type: 'image',
       senderId: 'maxime@kraaft.co',
       createdAt: 1618056917999,
       url: 'https://i.imgur.com/9OAvz8R.png',
@@ -72,14 +49,12 @@ export const store: Store = {
     },
     {
       id: 'IHf9wxvqUV',
-      type: 'text',
       senderId: 'cedric@kraaft.co',
       createdAt: 1618056927368,
       content: 'No, what happened in that game?',
     },
     {
       id: '8ZDFgmLsYW',
-      type: 'image',
       senderId: 'maxime@kraaft.co',
       createdAt: 1618056949966,
       url: 'https://i.imgur.com/wVLumym.jpg',
@@ -87,7 +62,6 @@ export const store: Store = {
     },
     {
       id: '_IaJIIhFyN',
-      type: 'image',
       senderId: 'cedric@kraaft.co',
       createdAt: 1618056972544,
       url: 'https://i.imgur.com/RHqQW9F.png',
@@ -95,7 +69,6 @@ export const store: Store = {
     },
     {
       id: '5HMCClTDka',
-      type: 'text',
       senderId: 'maxime@kraaft.co',
       createdAt: 1618057001918,
       content: `I don't know but it did.  It's the highest scoring game in history.`,

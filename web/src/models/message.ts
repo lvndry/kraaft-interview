@@ -2,7 +2,6 @@ interface BaseMessage {
   id: string;
   senderId: string;
   createdAt: number;
-  type: 'text' | 'image';
 }
 
 export interface TextMessage extends BaseMessage {
