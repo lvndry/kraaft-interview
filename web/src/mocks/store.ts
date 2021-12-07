@@ -79,5 +79,5 @@ export const store: Store = {
       createdAt: 1618057001940,
       content: `@Maxime @Cedric Boidin! Don't you think it would be a great idea to hire Landry ?`,
     },
-  ].sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1)),
+  ].sort((a, b) => (a.createdAt < b.createdAt ? -1 : 1)),
 };
