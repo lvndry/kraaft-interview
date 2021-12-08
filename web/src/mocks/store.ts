@@ -76,7 +76,7 @@ export const store: Store = {
     {
       id: '5HMCClTDkb',
       senderId: 'maxime@kraaft.co',
-      createdAt: 1618059001890,
+      createdAt: 1618057001940,
       content: `@Maxime @Cedric Boidin! Don't you think it would be a great idea to hire Landry ?`,
     },
   ].sort((a, b) => (a.createdAt < b.createdAt ? -1 : 1)),

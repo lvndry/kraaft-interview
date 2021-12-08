@@ -76,7 +76,7 @@ const MessageContainer = styled.div`
 `;
 
 const MessageContentWrapper = styled.div`
-  max-width: 60%;
+  max-width: 45%;
 `;
 
 const MessageContent = styled.div`
@@ -156,6 +156,8 @@ const ImageMessageWrapper = styled.div`
 
 const Image = styled.img`
   z-index: 1;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 `;
 
 const Mention = styled.span`
