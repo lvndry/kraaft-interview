@@ -31,7 +31,7 @@ const Conversation = ({ messages }: ConversationProps) => {
       })}
     </div>
   ) : (
-    <div>Aucun messages</div>
+    <EmptyConversationContainer>Aucun messages</EmptyConversationContainer>
   );
 };
 
@@ -39,4 +39,11 @@ export default Conversation;
 
 const MessageWrapper = styled.div`
   margin-top: 8px;
+`;
+
+const EmptyConversationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 `;

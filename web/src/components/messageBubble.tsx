@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useContext, useEffect, useState } from 'react';
+import { colors } from '../colors';
 import { UserContext } from '../context/userContext';
 import { Message, User } from '../models';
 import { isTextMessage } from '../models/message';
@@ -94,7 +95,7 @@ export const SentMessageBubble = styled(MessageBubble)`
     align-items: flex-end;
     .message-content {
       position: relative;
-      background: #55efc4;
+      background: ${colors.SENT_MESSAGE_BACKGROUND};
 
       &:after {
         content: '';
@@ -104,7 +105,7 @@ export const SentMessageBubble = styled(MessageBubble)`
         width: 0;
         height: 0;
         border: 21px solid transparent;
-        border-bottom-color: #55efc4;
+        border-bottom-color: ${colors.SENT_MESSAGE_BACKGROUND};
         border-top: 0;
         border-right: 0;
         margin-right: -10.5px;
@@ -119,7 +120,7 @@ export const ReceivedMessageBubble = styled(MessageBubble)`
     align-items: flex-start;
     .message-content {
       position: relative;
-      background: #dfe6e9;
+      background: ${colors.RECEIVED_MESSAGE_BACKGROUND};
 
       &:after {
         content: '';
@@ -129,7 +130,7 @@ export const ReceivedMessageBubble = styled(MessageBubble)`
         width: 0;
         height: 0;
         border: 21px solid transparent;
-        border-bottom-color: #dfe6e9;
+        border-bottom-color: ${colors.RECEIVED_MESSAGE_BACKGROUND};
         border-top: 0;
         border-left: 0;
         margin-left: -10.5px;
@@ -141,7 +142,7 @@ export const ReceivedMessageBubble = styled(MessageBubble)`
 
 const DateWrapper = styled.time`
   margin-top: 8px;
-  color: #636e72;
+  color: ${colors.DATE_COLOR};
 `;
 
 const ImageMessageWrapper = styled.div`
@@ -162,7 +163,7 @@ const Image = styled.img`
 
 const Mention = styled.span`
   cursor: pointer;
-  color: #ff7675;
+  color: ${colors.MENTION_COLOR};
 `;
 
 const BasicText = styled.span``;
